@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+  name: hello-world-service
+spec:
+  rules:
+  - host: {{.Values.loadBalancerHost}}
+    http:
+      paths:
+      - path: /hello-world-service
+        backend:
+          serviceName: hello-world-service
+          servicePort: 8080

@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world-service
+spec:
+  replicas: 1
+  selector:
+      matchLabels:
+        app: hello-world-service
+  template:
+    metadata:
+      name: hello-world-service
+      labels:
+        app: hello-world-service
+    spec:
+      containers:
+      - name: hello-world-service
+        image: {{.Values.dockerRegistryUrl}}/teliacompany/tlt/services/hello-world-service:0.1.0-SNAPSHOT
+        imagePullPolicy: {{.Values.imagePullPolicy}}
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: hello-world-service
+        resources:
+          limits:
+            memory: "400Mi"
+            cpu: "200m"
+          requests:
+            memory: "200Mi"
+            cpu: "100m"

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-world-service
+data:
+  http.proxyHost: proxy-se.ddc.teliasonera.net
+  http.proxyPort: "8080"
+  http.resourceUrl: https://test.salesforce.com
