@@ -107,7 +107,7 @@
 				<payaraVersion>5.182</payaraVersion>
 				<useUberJar>false</useUberJar>
 				<deployWar>false</deployWar>
-				<daemon>${runInBackground}</daemon>
+				<daemon>false</daemon>
 			</configuration>
 		</plugin>
 
