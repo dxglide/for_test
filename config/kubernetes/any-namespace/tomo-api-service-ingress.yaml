@@ -12,7 +12,7 @@ spec:
   - host: {{.Values.loadBalancerHost}}
     http:
       paths:
-      - path: /hello-world-service
+      - path: /tomo-api-service
         backend:
-          serviceName: hello-world-service
+          serviceName: tomo-api-service
           servicePort: 8080
