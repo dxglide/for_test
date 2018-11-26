@@ -133,7 +133,7 @@
           <repository>${docker.image.prefix}/${project.artifactId}</repository>
           <tag>${project.version}</tag>
           <buildArgs>
-            <JAR_FILE>target/${project.build.finalName}-microbundle.jar</JAR_FILE>
+            <JAR_FILE>target/tomo-api-service-microbundle.jar</JAR_FILE>
           </buildArgs>
         </configuration>
       </plugin>
